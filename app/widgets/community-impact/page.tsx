@@ -1,7 +1,15 @@
+"use client";
+import { BeamCommunityImpact } from "@beamimpact/web-sdk/react";
+import { useBeam } from "@/app/common/beamContext";
+
 export default function Widget() {
+  const beamConfig = useBeam();
   return (
     <div>
-      Add widget here
+      <BeamCommunityImpact
+        {...beamConfig}
+        cardStyle={"image"}
+      ></BeamCommunityImpact>
     </div>
-  )
+  );
 }

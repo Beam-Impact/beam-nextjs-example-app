@@ -1,7 +1,12 @@
+"use client";
+import { BeamRedeemTransaction } from "@beamimpact/web-sdk/react";
+import { useBeam } from "@/app/common/beamContext";
+
 export default function Widget() {
+  const beamConfig = useBeam();
   return (
     <div>
-      Add widget here
+      <BeamRedeemTransaction {...beamConfig}></BeamRedeemTransaction>
     </div>
-  )
+  );
 }
