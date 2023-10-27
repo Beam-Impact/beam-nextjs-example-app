@@ -12,6 +12,7 @@ export default function Nav() {
                 <li><Link href="/widgets/post-purchase">Post Purchase</Link></li>
                 <li><Link href="/widgets/community-impact">Community Impact</Link></li>
                 <li><Link href="/widgets/cumulative-impact">Cumulative Impact</Link></li>
+                <li><Link href="/widgets/test-store">Beam Store</Link></li>
             </ol>
         </>
     )
