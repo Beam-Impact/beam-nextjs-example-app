@@ -13,7 +13,7 @@ export type BeamConfig = {
   baseUrl: string;
 };
 
-const defaultBeamConfig: BeamConfig = {
+export const defaultBeamConfig: BeamConfig = {
   apiKey: "abc-123",
   chainId: 1,
   storeId: 1,

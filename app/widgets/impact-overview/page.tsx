@@ -1,5 +1,5 @@
 "use client";
-import { BeamImpactOverview } from "@beamimpact/web-sdk/react";
+import { BeamImpactOverview } from "@beamimpact/web-sdk/dist/react";
 import { useBeam } from "@/app/common/beamContext";
 
 export default function Widget() {
