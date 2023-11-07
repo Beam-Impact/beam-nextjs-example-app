@@ -1,6 +1,16 @@
 "use client";
-import { BeamPostPurchase } from "@beamimpact/web-sdk/dist/react";
 import { useBeam } from "@/app/common/beamContext";
+
+// Example of how to use dynamic imports:
+import dynamic from "next/dynamic";
+
+const BeamPostPurchase = dynamic(
+  () => import("@beamimpact/web-sdk/dist/react/post-purchase"),
+  {
+    loading: () => null,
+    ssr: false,
+  },
+);
 
 export default function Widget() {
   const beamConfig = useBeam();
