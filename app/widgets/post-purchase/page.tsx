@@ -8,7 +8,7 @@ export default function Widget() {
     <div>
       <BeamPostPurchase
         {...beamConfig}
-        orderId={"ORDER-1000"}
+        orderId={"ORDER-" + Math.round(Math.random() * 10000)}
         email={"customer@example.com"}
         cartTotal={100.0}
       ></BeamPostPurchase>

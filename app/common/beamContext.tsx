@@ -21,6 +21,7 @@ export const defaultBeamConfig: BeamConfig = {
   storeId: 1,
   debug: true,
   baseUrl: "https://dev-central-backend.beamimpact.com",
+  // baseUrl: "http://localhost:8081/mocks",
 };
 
 export const BeamContext = createContext(defaultBeamConfig);

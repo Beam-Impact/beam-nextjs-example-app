@@ -7,7 +7,7 @@ export default function Widget() {
   return (
     <BeamImpactOverview
       {...beamConfig}
-      userId={"user-111"}
+      userId={"b96b5607-38e2-4811-bdbc-72859865a103"}
       nonprofitId={1}
     ></BeamImpactOverview>
   );
