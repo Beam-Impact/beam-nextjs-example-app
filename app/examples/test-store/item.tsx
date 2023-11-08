@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { OnCartChangeFunction } from "../types";
+import { OnCartChangeFunction } from "../../types";
 
 const Item = ({
   imageUrl,

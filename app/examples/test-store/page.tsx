@@ -1,8 +1,8 @@
 "use client";
-import Item from "@/app/components/item";
+import Item from "@/app/examples/test-store/item";
 import { ItemType, Items } from "@/app/types";
 import { useEffect, useState, CSSProperties } from "react";
-import Cart from "@/app/components/cart";
+import Cart from "@/app/examples/test-store/cart";
 
 export default function Store() {
   const gridContainerStyle: CSSProperties = {

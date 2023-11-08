@@ -33,7 +33,7 @@ export default function Nav() {
         </li>
         <hr className={"my-2"} />
         <li>
-          <Link href="/widgets/test-store">Beam Store</Link>
+          <Link href="/examples/test-store">Beam Store</Link>
         </li>
       </ol>
     </>
