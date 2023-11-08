@@ -4,6 +4,7 @@ export default function Nav() {
   return (
     <>
       <h1 className="text-3xl mb-4">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://cdn01.beamimpact.com/chains/img/beam-logo.png"
           className="mb-4 w-[75%]"
