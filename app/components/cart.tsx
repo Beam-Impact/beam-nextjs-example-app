@@ -1,12 +1,14 @@
-import React from 'react'
-import { ItemType } from '@/app/types'
+import React from "react";
+import { ItemType } from "@/app/types";
 
 interface CartProps {
-  cartItems: ItemType[]
+  cartItems: ItemType[];
 }
 
 const Cart: React.FC<CartProps> = ({ cartItems }) => {
-  const totalPrice = cartItems.reduce((acc, item) => acc + parseFloat(item.itemPrice) * item.quantity, 0).toFixed(2)
+  const totalPrice = cartItems
+    .reduce((acc, item) => acc + parseFloat(item.itemPrice) * item.quantity, 0)
+    .toFixed(2);
 
   return (
     <div>
@@ -14,7 +16,8 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
       <ul>
         {cartItems.map((cartItem, index) => (
           <li key={index}>
-            {cartItem.itemName} - ${cartItem.itemPrice} - Quantity: {cartItem.quantity}
+            {cartItem.itemName} - ${cartItem.itemPrice} - Quantity:{" "}
+            {cartItem.quantity}
           </li>
         ))}
       </ul>
@@ -23,7 +26,7 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
         <button>Checkout</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
