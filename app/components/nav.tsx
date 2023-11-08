@@ -1,11 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Nav() {
   return (
     <>
       <h1 className="text-3xl mb-4">
-        <Image
+        <img
           src="https://cdn01.beamimpact.com/chains/img/beam-logo.png"
           className="mb-4 w-[75%]"
           alt="Beam Logo"
