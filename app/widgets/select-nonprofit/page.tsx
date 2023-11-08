@@ -1,11 +1,9 @@
 "use client";
-// import { BeamSelectNonprofit } from "@beamimpact/web-sdk/dist/react"; // static import, needs "use client"
 import { events } from "@beamimpact/web-sdk/dist/integrations/utils";
 import { useBeam } from "@/app/common/beamContext";
 import { useState } from "react";
-
-// Example of how to use dynamic imports:
 import dynamic from "next/dynamic";
+
 const BeamSelectNonprofit = dynamic(
   () => import("@beamimpact/web-sdk/dist/react/select-nonprofit"),
   {

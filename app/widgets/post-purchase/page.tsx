@@ -1,7 +1,5 @@
 "use client";
 import { useBeam } from "@/app/common/beamContext";
-
-// Example of how to use dynamic imports:
 import dynamic from "next/dynamic";
 
 const BeamPostPurchase = dynamic(

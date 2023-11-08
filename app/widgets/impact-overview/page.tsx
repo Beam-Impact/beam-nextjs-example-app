@@ -1,6 +1,14 @@
 "use client";
-import { BeamImpactOverview } from "@beamimpact/web-sdk/dist/react";
 import { useBeam } from "@/app/common/beamContext";
+import dynamic from "next/dynamic";
+
+const BeamImpactOverview = dynamic(
+  () => import("@beamimpact/web-sdk/dist/react/impact-overview"),
+  {
+    loading: () => null,
+    ssr: false,
+  },
+);
 
 export default function Widget() {
   const beamConfig = useBeam();
