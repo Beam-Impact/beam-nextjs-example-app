@@ -17,8 +17,9 @@ export default function Widget() {
   const [selectedNonprofitHistory, setSelectedNonprofit] = useState<string[]>(
     [],
   );
+
   return (
-    <div>
+    <>
       <BeamSelectNonprofit
         {...beamConfig}
         onNonprofitSelect={(event: events.BeamNonprofitSelectEvent) => {
@@ -30,15 +31,6 @@ export default function Widget() {
           ]);
         }}
       ></BeamSelectNonprofit>
-      <hr className={"mt-5"} />
-      <ul className={"mt-5 text-gray-600"}>
-        <strong>Selection Event History</strong>
-        {selectedNonprofitHistory.map((npName, idx) => (
-          <li key={npName + idx}>
-            {idx + 1}. {npName}
-          </li>
-        ))}
-      </ul>
-    </div>
+    </>
   );
 }

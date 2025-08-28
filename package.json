@@ -10,19 +10,20 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@beamimpact/web-sdk": "^1",
-    "next": "13.5.6",
+    "@beamimpact/web-sdk": "^1.52.7",
+    "custom-event-polyfill": "^1.0.7",
+    "next": "15.5.2",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@lit-labs/nextjs": "^0.1.2",
+    "@lit-labs/nextjs": "^0.2.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
     "eslint": "^8",
-    "eslint-config-next": "13.5.6",
+    "eslint-config-next": "15.5.2",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.0",
     "husky": "^8.0.0",
