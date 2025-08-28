@@ -16,12 +16,11 @@ export type BeamConfig = {
 export const defaultBeamConfig: BeamConfig = {
   apiKey:
     process.env.BEAM_API_KEY ||
-    "24T5yQFIIz6x.abc317ce-bd1f-47ed-909f-d1c11b03601e", // demo key for dev store
+    "beamtest-PPmpnrGsUJcY.a7becb88-b30e-45d8-996e-c29e3dc08017", // demo key for dev store
   chainId: 1,
   storeId: 1,
   debug: true,
-  baseUrl: "https://dev-central-backend.beamimpact.com",
-  // baseUrl: "http://localhost:8081/mocks",
+  baseUrl: "https://api-dev.beamimpact.com",
 };
 
 export const BeamContext = createContext(defaultBeamConfig);

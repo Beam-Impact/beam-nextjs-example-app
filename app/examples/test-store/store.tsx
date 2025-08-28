@@ -89,7 +89,7 @@ export default function Store() {
     {
       imageUrl:
         "https://wallpapers.com/images/hd/girl-painting-in-studio-ghibli-scenery-1nntqz6tmekfnrf7.jpg",
-      itemName: "Studio Ghibli: Girl Painting",
+      itemName: "Studio Ghibli: Painting",
       itemPrice: "9.99",
     },
     {
