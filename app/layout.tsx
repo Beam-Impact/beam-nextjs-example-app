@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex flex-row gap-4 m-10`}>
+      <body className={`${openSans.className} flex flex-row gap-4 m-10`}>
         <nav className="m-4 ph-2 min-w-[250px]">
           <Nav />
         </nav>
