@@ -18,6 +18,9 @@ export default function Nav() {
           <Link href="/widgets/select-nonprofit">Select Nonprofit</Link>
         </li>
         <li>
+          <Link href="/widgets/product-details-page">Product Details Page</Link>
+        </li>
+        <li>
           <Link href="/widgets/redeem-transaction">Redeem Transaction</Link>
         </li>
         <li>

@@ -10,7 +10,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@beamimpact/web-sdk": "^1.52.7",
+    "@beamimpact/web-sdk": "^1.55.4",
     "custom-event-polyfill": "^1.0.7",
     "next": "15.5.2",
     "react": "^18",
