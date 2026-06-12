@@ -13,7 +13,9 @@ const BeamSelectNonprofit = dynamic(
 );
 
 export default function Store() {
+  const cartId = crypto.randomUUID();
   const beamConfig = useBeam();
+
   const gridContainerStyle: CSSProperties = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fill, 300px)",
@@ -40,11 +42,13 @@ export default function Store() {
         return [...prevCart, { ...item, quantity: item.quantity }];
       }
     });
+
     const updatedCart = [...cart, item];
+
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     // Update cart in Beam
     await updateCart(beamConfig, {
-      cartId: "abc123",
+      cartId,
       currencyCode: "USD",
       itemCount: updatedCart.length,
       subtotal: updatedCart.reduce((sum, item): number => {
