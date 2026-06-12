@@ -1,13 +1,9 @@
 "use client";
 import Item from "@/app/examples/test-store/item";
 import { ItemType, Items } from "@/app/types";
-import { useEffect, useState, CSSProperties, useCallback } from "react";
+import { useEffect, useState, CSSProperties } from "react";
 import Cart from "@/app/examples/test-store/cart";
 import { updateCart } from "@beamimpact/web-sdk/dist/integrations/cart";
-import {
-  events,
-  createScopedLocalStorage,
-} from "@beamimpact/web-sdk/dist/integrations/utils";
 import { useBeam } from "@/app/common/beamContext";
 import dynamic from "next/dynamic";
 
