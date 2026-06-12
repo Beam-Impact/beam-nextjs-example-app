@@ -65,59 +65,7 @@ export default function Store() {
         })),
       },
     });
-
-    // If the user has a nonprofit selection from before this
-    // cart was created, tie that selection to the cart
-    const beamLocalStorage = createScopedLocalStorage(beamConfig);
-    const beamSelectionId = beamLocalStorage.getItem("transaction") || null;
-    const beamNonprofitId =
-      Number(beamLocalStorage.getItem("nonprofit")) || null;
-
-    // Option 1 - Synchronous call after cart is updated
-    // if (beamSelectionId) {
-    //   await fetch(`${beamConfig.baseUrl}/api/v3/selectNonprofit`, {
-    //     method: "POST",
-    //     headers: {
-    //       Authorization: `Api-Key ${beamConfig.apiKey}`,
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       nonprofitId: beamNonprofitId,
-    //       storeId: beamConfig.storeId,
-    //       selectionId: beamSelectionId,
-    //       cartId: cartId,
-    //       creationMethod: "cart",
-    //     }),
-    //   });
-    // }
   };
-
-  // Option 2 - Asynchronous listener for cart creation
-  const handleBeamCartCreated = useCallback(
-    (_event: Event) => {
-      const beamLocalStorage = createScopedLocalStorage(beamConfig);
-      const beamSelectionId = beamLocalStorage.getItem("transaction") || null;
-      const beamNonprofitId =
-        Number(beamLocalStorage.getItem("nonprofit")) || null;
-
-      const event = _event as events.BeamCartCreatedEvent;
-      fetch(`${beamConfig.baseUrl}/api/v3/selectNonprofit`, {
-        method: "POST",
-        headers: {
-          Authorization: `Api-Key ${beamConfig.apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nonprofitId: beamNonprofitId,
-          storeId: beamConfig.storeId,
-          selectionId: beamSelectionId,
-          cartId: event.detail.cartId,
-          creationMethod: "cart",
-        }),
-      });
-    },
-    [beamConfig],
-  );
 
   const removeFromCart = (item: ItemType) => {
     setCart((prevCart) => {
@@ -144,20 +92,6 @@ export default function Store() {
       setCart(JSON.parse(storedCart));
     }
   }, []);
-
-  useEffect(() => {
-    window.addEventListener(
-      events.BeamCartCreatedEvent.eventName,
-      handleBeamCartCreated,
-    );
-
-    return () => {
-      window.removeEventListener(
-        events.BeamCartCreatedEvent.eventName,
-        handleBeamCartCreated,
-      );
-    };
-  }, [handleBeamCartCreated]);
 
   const items: Items[] = [
     {
