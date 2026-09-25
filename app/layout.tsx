@@ -21,7 +21,7 @@ export default function RootLayout({
         <nav className="m-4 ph-2 min-w-[250px]">
           <Nav />
         </nav>
-        <main className="p-4 mt-2">{children}</main>
+        <main className="p-4 mt-2 flex-1 min-w-0">{children}</main>
       </body>
     </html>
   );

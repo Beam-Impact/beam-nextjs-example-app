@@ -1,59 +1,33 @@
-import React, { useState } from "react";
-import { OnCartChangeFunction } from "../../types";
+import React from "react";
+import { ProductImage } from "@/app/common/storefront";
+import { Product } from "@/app/types";
 
 const Item = ({
-  imageUrl,
-  itemName,
-  itemPrice,
+  product,
   onAddToCart,
-  onRemoveFromCart,
 }: {
-  imageUrl: string;
-  itemName: string;
-  itemPrice: string;
-  onAddToCart: OnCartChangeFunction;
-  onRemoveFromCart: OnCartChangeFunction;
+  product: Product;
+  onAddToCart: (product: Product) => void;
 }) => {
-  const [quantity, setQuantity] = useState(1);
-
-  const handleAddToCart = () => {
-    onAddToCart({ imageUrl, itemName, itemPrice, quantity });
-  };
-
-  const handleRemoveFromCart = () => {
-    onRemoveFromCart({ imageUrl, itemName, itemPrice, quantity });
-  };
-
   return (
-    <div className="item-container" style={{ padding: "20px 0px" }}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img width={300} src={imageUrl} alt={itemName} className="item-image" />
-      <h2 className="item-name">
-        {itemName} - ${itemPrice}
-      </h2>
-      <div>
-        <span>
-          <button onClick={handleAddToCart}>Add to Cart</button>
-        </span>
-        <span style={{ padding: "0px 10px" }}>
-          <input
-            type="number"
-            min="1"
-            value={quantity}
-            onChange={(e) => setQuantity(parseInt(e.target.value))}
-            style={{
-              fontSize: "14px",
-              textAlign: "center",
-              width: "40px",
-              border: "1px solid #ccc",
-              borderRadius: "5px",
-              color: "black",
-            }}
-          />
-        </span>
-        <button onClick={handleRemoveFromCart}>Remove from Cart</button>
-      </div>
-    </div>
+    <li className="flex flex-col">
+      <ProductImage
+        gradient={product.gradient}
+        label={`${product.name} in ${product.variant}`}
+        className="mb-3 aspect-[4/5] rounded-lg"
+      />
+      <h2 className="font-bold">{product.name}</h2>
+      <p className="mb-1 text-sm text-gray-500">{product.variant}</p>
+      <p className="mb-3">${product.price.toFixed(2)}</p>
+      <button
+        type="button"
+        className="mt-auto rounded border border-neutral-800 bg-white p-2.5 font-bold hover:bg-neutral-800 hover:text-white"
+        onClick={() => onAddToCart(product)}
+        aria-label={`Add ${product.name} to cart`}
+      >
+        Add to cart
+      </button>
+    </li>
   );
 };
 
